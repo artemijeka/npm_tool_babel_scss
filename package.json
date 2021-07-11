@@ -1,0 +1,41 @@
+{
+  "name": "npm js babel + scss + autoprefixer + minimize developing",
+  "scripts": {
+    "dev": "npm-run-all --parallel scss-w css-prefix-w babel-dev",
+    "dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\" \"npm run babel-dev\"",
+    "scss-dev": "npm-run-all --parallel scss-w css-prefix-w",
+    "scss-dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\"",
+    "scss-dev-u": "npm run scss-w & npm run css-prefix-w",
+    "scss-w": "sass --watch --no-source-map ./scss/styles.scss ./css/styles.css",
+    "css-prefix-w": "postcss --watch ./css/styles.css -u autoprefixer -o ./css/styles.prefix.css --no-map --verbose",
+    "scss-build": "npm run scss-min && npm run css-prefix",
+    "scss-min": "sass --no-source-map ./scss/styles.scss ./css/styles.min.css --style compressed",
+    "css-prefix": "postcss ./css/styles.min.css -u autoprefixer -o ./css/styles.min.prefix.css --no-map --verbose",
+    "babel-dev": "babel ./js/modules/ ./js/blocks/ --watch  --verbose --out-file ./js/scripts.js",
+    "babel-build": "babel  ./js/modules/ ./js/blocks/ --verbose --presets minify --out-file ./js/scripts.min.js",
+    "build": "npm-run-all --parallel babel-build scss-build",
+    "build-alt": "concurrently \"npm run babel-build\" \"npm run scss-build\"",
+    "build-u": "npm run scss-w & npm run babel-build & npm run scss-build"
+  },
+  "browserslist": [
+    "last 10 version",
+    ">0.2%",
+    "IE 9"
+  ],
+  "devDependencies": {
+    "@babel/cli": "^7.14.5",
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "autoprefixer": "^10.2.4",
+    "babel-preset-minify": "^0.5.1",
+    "concurrently": "^6.0.0",
+    "npm-run-all": "^4.1.5",
+    "postcss": "^8.2.7",
+    "postcss-cli": "^8.3.1",
+    "sass": "^1.32.8"
+  },
+  "dependencies": {
+    "@babel/polyfill": "^7.12.1",
+    "@openfonts/noto-serif-tc_cyrillic": "^1.44.0"
+  }
+}
