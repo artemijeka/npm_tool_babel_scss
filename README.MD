@@ -1,4 +1,4 @@
-"info": "15.06.22 - expiring support ie 11"
+# info: 15.06.22 - expiring support ie 11
 
 # npm js babel + scss + autoprefixer + minimize developing
 # v 2.0 - 12.07.2021
