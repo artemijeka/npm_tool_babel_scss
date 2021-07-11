@@ -25,7 +25,7 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 `npm i`
 ---
 
-### Если `npm i` не устанавливается, то:
+### If `npm i` is not installed, then:
 ```
   # Update nodejs to latest version:
   sudo npm install -g n
@@ -37,38 +37,38 @@ npm install --save-dev @babel/core @babel/cli @babel/preset-env
 ```
 ---
 
-### Разработка SCSS:  
-`npm run scss-dev` **или** `npm run scss-dev-alt` **можно** `npm run scss-dev-u` **(если unix машина)**  
-**- это запустит компиляцию и слежение за файлом:**   
-`/scss/styles.scss` **(и за всеми в нем подключенными)**,  
-**затем компиляция, автопрефиксы и объединение в один файл:**  
+### Development SCSS:  
+`npm run scss-dev` **or** `npm run scss-dev-alt` **could** `npm run scss-dev-u` **(if unix machine)**  
+**- this will start compiling and tracking the file:**   
+`/scss/styles.scss` **(and behind all connected)**,  
+**then compilation, auto-prefixes and merging into one file:**  
 `/css/styles.prefix.css`  
 
-### Разработка JS Babel:  
+### Development JS Babel:  
   `npm run babel-dev`  
-  **- это запустит компиляцию и слежение за дирректорией:**  
-    `/js/` **(и за всеми в ней файлами `*.js`)**  
-  *(тут надо обратить внимание на префикс всех `.js` файлов (`50.script.js`), от него зависит порядок компиляции файлов),*   
-  **затем компиляция, автопрефиксы и объединение в один файл:**  
+  **- this will start compiling and tracking the directory:**  
+    `/js/` **(and behind all the files in it `*.js`)**  
+  *(here you need to pay attention to the prefix of all `.js` file system (`50.script.js`), the order of compilation of files depends on it),*   
+  **then compilation, auto-prefixes and merging into one file:**  
     `/js/scripts.js` 
 
-### Разработка SCSS + JS Babel
-  `npm run dev` **или** `npm run dev-alt`
+### Development SCSS + JS Babel
+  `npm run dev` **or** `npm run dev-alt`
 ---
 
-### Сборка и минификация SCSS:  
+### Build and minify SCSS:  
 `npm run scss-build`  
-**- делает тоже самое, что и:** `npm run scss-dev*`,  
-**только не следит за файлом и делает минификацию файла:**  
+**- does the same as:** `npm run scss-dev*`,  
+**only does not monitor the file and does the minification of the file:**  
 `/css/styles.prefix.min.css`  
 ---
 
-### Сборка и минификация JS Babel:           
+### Build and minify JS Babel:           
   `npm run babel-build`        
-  **- делает тоже самое, что и** `npm run babel-dev`
-  **только не следит за дирректорией и делает минификацию кода в файл:**  
+  **- does the same as** `npm run babel-dev`
+  **just doesn't follow the directory and minify the code to a file:**  
     `/js/scripts.min.js`  
 ---
 
-### Сборка и минификация SCSS + JS Babel:  
-  `npm run build` **или** `npm run build-alt` **или** `npm run build-u`    
+### Build and minify SCSS + JS Babel:  
+  `npm run build` **or** `npm run build-alt` **or** `npm run build-u`    
