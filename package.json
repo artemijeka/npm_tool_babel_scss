@@ -1,5 +1,5 @@
 {
-  "name": "npm js babel + scss + autoprefixer + minimize developing",
+  "name": "artemijeka",
   "scripts": {
     "dev": "npm-run-all --parallel scss-w css-prefix-w babel-dev",
     "dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\" \"npm run babel-dev\"",
@@ -10,7 +10,7 @@
     "css-prefix-w": "postcss --watch ./css/styles.css -u autoprefixer -o ./css/styles.prefix.css --no-map --verbose",
     "scss-build": "npm run scss-min && npm run css-prefix",
     "scss-min": "sass --no-source-map ./scss/styles.scss ./css/styles.min.css --style compressed",
-    "css-prefix": "postcss ./css/styles.min.css -u autoprefixer -o ./css/styles.min.prefix.css --no-map --verbose",
+    "css-prefix": "postcss ./css/styles.min.css -u autoprefixer -o ./css/styles.prefix.min.css --no-map --verbose",
     "babel-dev": "babel ./js/modules/ ./js/blocks/ --watch  --verbose --out-file ./js/scripts.js",
     "babel-build": "babel  ./js/modules/ ./js/blocks/ --verbose --presets minify --out-file ./js/scripts.min.js",
     "build": "npm-run-all --parallel babel-build scss-build",
