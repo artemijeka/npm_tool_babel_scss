@@ -1,5 +1,5 @@
 {
-  "name": "artemijeka",
+  "name": "npm-tool-babel-scss",
   "scripts": {
     "dev": "npm-run-all --parallel scss-w css-prefix-w babel-dev",
     "dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\" \"npm run babel-dev\"",
@@ -19,8 +19,8 @@
   },
   "browserslist": [
     "last 10 version",
-    ">0.2%",
-    "IE 9"
+    ">1.6%",
+    "IE 11"
   ],
   "devDependencies": {
     "@babel/cli": "^7.14.5",
