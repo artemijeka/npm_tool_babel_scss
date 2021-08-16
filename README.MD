@@ -1,7 +1,9 @@
-# info: 15.06.22 - expiring support ie 11
+### npm js babel + scss + autoprefixer + minimize developing   
+Source: https://github.com/artemijeka/npm-tool-babel-scss   
+Version: v2.0 - 12.07.2021   
+Info: 15.06.22 - expiring support ie 11
 
-# npm js babel + scss + autoprefixer + minimize developing
-# v 2.0 - 12.07.2021
+---
 
 ***https://github.com/nodesource/distributions/blob/master/README.md***
 ### (linux ubuntu apt):  
