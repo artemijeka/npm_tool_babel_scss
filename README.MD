@@ -79,3 +79,13 @@ only does not monitor the file and does the minification of the file:
   just doesn't follow the directory and minify the code to a file:  
     `/js/scripts.min.js`  
 
+
+
+#### Docs:
+minify js:
+  >  terser   
+  >  https://github.com/terser/terser
+
+watching:
+  >  watch
+  >  https://github.com/mikeal/watch
