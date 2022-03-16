@@ -2,6 +2,7 @@
 Source: https://github.com/artemijeka/npm-tool-babel-scss   
 Version: v2.1 - 16.03.2022   
 Info: 15.06.22 - expiring support ie 11
+Contacts: web.master-artem.ru
 
 ---
 
