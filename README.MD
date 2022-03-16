@@ -9,14 +9,14 @@ Info: 15.06.22 - expiring support ie 11
 #### (linux ubuntu apt):  
 *https://nodejs.org/en/download/package-manager/*
 ```
-cd /path/to/site.ru  
-sudo apt install curl
-curl -fsSL https://deb.nodesource.com/setup_14.x | sudo -E bash -
-sudo apt install -y nodejs 
-sudo apt install -y npm 
-sudo apt autoremove
-npm i
-npm install --save-dev @babel/core @babel/cli @babel/preset-env
+cd /path/to/site.ru   
+sudo apt install curl 
+# Using Ubuntu 
+curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
+sudo apt-get install -y nodejs 
+sudo apt-get install -y npm 
+sudo apt autoremove 
+npm i 
 ```
 ---
 
