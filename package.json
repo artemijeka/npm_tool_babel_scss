@@ -1,46 +1,32 @@
 {
   "name": "npm-tool-babel-scss",
   "scripts": {
-    "dev": "npm-run-all --parallel scss-w css-prefix-w babel-dev",
-    "d": "npm-run-all --parallel scss-w css-prefix-w babel-dev",
+    "dev": "npm-run-all --parallel scss-w css-prefix-w babel-dev js-minify",
     "dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\" \"npm run babel-dev\"",
-    "da": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\" \"npm run babel-dev\"",
     "scss-dev": "npm-run-all --parallel scss-w css-prefix-w",
-    "sd": "npm-run-all --parallel scss-w css-prefix-w",
     "scss-dev-alt": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\"",
-    "sda": "concurrently --kill-others \"npm run scss-w\" \"npm run css-prefix-w\"",
     "scss-dev-u": "npm run scss-w & npm run css-prefix-w",
-    "sdu": "npm run scss-w & npm run css-prefix-w",
-    "scss-w": "sass --watch --no-source-map ./scss/styles.scss ./css/styles.css",
-    "sw": "sass --watch --no-source-map ./scss/styles.scss ./css/styles.css",
-    "css-prefix-w": "postcss --watch ./css/styles.css -u autoprefixer -o ./css/styles.prefix.css --no-map --verbose",
-    "cpw": "postcss --watch ./css/styles.css -u autoprefixer -o ./css/styles.prefix.css --no-map --verbose",
+    "scss-w": "sass --watch --no-source-map ./scss/header-studios-and-imap.scss ./css/dev/header-studios-and-imap.min.css --style compressed",
+    "css-prefix-w": "postcss --watch ./css/dev/header-studios-and-imap.min.css -u autoprefixer -o ./css/header-studios-and-imap.prefix.min.css --no-map --verbose",
     "scss-build": "npm run scss-min && npm run css-prefix",
-    "sb": "npm run scss-min && npm run css-prefix",
     "scss-min": "sass --no-source-map ./scss/styles.scss ./css/styles.min.css --style compressed",
-    "sm": "sass --no-source-map ./scss/styles.scss ./css/styles.min.css --style compressed",
     "css-prefix": "postcss ./css/styles.min.css -u autoprefixer -o ./css/styles.prefix.min.css --no-map --verbose",
-    "cp": "postcss ./css/styles.min.css -u autoprefixer -o ./css/styles.prefix.min.css --no-map --verbose",
-    "babel-dev": "babel ./js/modules/ ./js/blocks/ --watch  --verbose --out-file ./js/script.js",
-    "bd": "babel ./script.js --watch  --verbose --out-file ./script.babel.js",
-    "babel-build": "babel  ./js/modules/ ./js/blocks/ --verbose --presets minify --out-file ./js/scripts.min.js",
-    "bb": "babel  ./js/modules/ ./js/blocks/ --verbose --presets minify --out-file ./js/scripts.min.js",
+    "babel-dev": "babel ./js/dev/header-studios-and-imap/ --watch --verbose --out-file ./js/header-studios-and-imap.js --no-comments",
+    "js-minify": "watch 'terser ./js/header-studios-and-imap.js --keep-classnames --keep-fnames --safari10 --output ./js/header-studios-and-imap.min.js' ./js/dev/header-studios-and-imap/",
+    "babel-build": "babel  ./js/dev/header-studios-and-imap/ --verbose --presets minify --out-file ./js/header-studios-and-imap.js --no-comments",
     "build": "npm-run-all --parallel babel-build scss-build",
-    "b": "npm-run-all --parallel babel-build scss-build",
     "build-alt": "concurrently \"npm run babel-build\" \"npm run scss-build\"",
-    "ba": "concurrently \"npm run babel-build\" \"npm run scss-build\"",
-    "build-u": "npm run scss-w & npm run babel-build & npm run scss-build",
-    "bu": "npm run scss-w & npm run babel-build & npm run scss-build"
+    "build-u": "npm run scss-w & npm run babel-build & npm run scss-build"
   },
   "browserslist": [
     "last 10 version",
-    ">1.6%",
+    ">0.25%",
     "IE 11"
   ],
   "devDependencies": {
-    "@babel/cli": "^7.14.5",
-    "@babel/core": "^7.14.6",
-    "@babel/preset-env": "^7.14.7",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.4",
     "autoprefixer": "^10.2.4",
     "babel-preset-minify": "^0.5.1",
     "concurrently": "^6.0.0",
@@ -51,6 +37,7 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "@openfonts/noto-serif-tc_cyrillic": "^1.44.0"
+    "@openfonts/noto-serif-tc_cyrillic": "^1.44.0",
+    "watch": "^1.0.2"
   }
 }
