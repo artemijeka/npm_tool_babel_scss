@@ -1,6 +1,6 @@
 #### npm js babel + scss + autoprefixer + minimize developing   
 Source: https://github.com/artemijeka/npm-tool-babel-scss   
-Version: v2.1 - 16.03.2022   
+Version: v2.2 - 15.09.2022   
 Info: 15.06.22 - expiring support ie 11
 Contacts: web.master-artem.ru
 
@@ -29,6 +29,7 @@ PowerShell command:
 
 ---
 
+#### Если `npm i` не установлен, тогда:
 #### If `npm i` is not installed, then:
 ```
   # Update nodejs to latest version:
@@ -41,31 +42,36 @@ PowerShell command:
 ```
 ---
 
+#### Разработка SCSS + JS Babel
 #### Development SCSS + JS Babel
 `npm run dev`
 
+#### Разработка SCSS:  
 #### Development SCSS:  
 `npm run scss-dev` 
 this will start compiling and tracking the file:   
-`./scss/header-studios-and-imap.scss` (and behind all connected),  
+`./scss/styles-bundle.scss` (and behind all connected),  
 then compilation, auto-prefixes and merging into one file:  
-`./css/dev/header-studios-and-imap.min.css`  and
-`./css/dev/header-studios-and-imap.prefix.min.css`
+`./css/dev/styles-bundle.min.css`  and
+`./css/styles-bundle.prefix.min.css`
 
+#### Разработка JS Babel:  
 #### Development JS Babel:  
 `npm run babel-dev`  
 this will start compiling and tracking the directory:  
-`./js/dev/header-studios-and-imap/` (and behind all the files in it `*.js`)  
+`./js/dev/blocks/` (and behind all the files in it `*.js`)  
 *(here you need to pay attention to the prefix of all `.js` file system (`50.some-script.js`), the order of compilation of files depends on it),*   
 then compilation, 'babeling' and merging into one file:  
-`./js/header-studios-and-imap.js` and
-`./js/header-studios-and-imap.min.js`
+`./js/dev/scripts-bundle.js` and
+`./js/scripts-bundle.min.js`
 
 ---
 
+#### Сборка и минификация SCSS + JS Babel:  
 #### Build and minify SCSS + JS Babel:  
 `npm run build`   
 
+#### Сборка и минификация SCSS:  
 #### Build and minify SCSS:  
 `npm run scss-build`  
 - does the same as: `npm run scss-dev*`,  
@@ -74,6 +80,7 @@ only does not monitor the file and does the minification of the file:
 
 
 
+#### Сборка и минификация JS Babel:           
 #### Build and minify JS Babel:           
   `npm run babel-build`        
   - does the same as `npm run babel-dev`
